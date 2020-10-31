@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import React, {useEffect} from 'react'
+// import axios from 'axios'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -16,8 +16,9 @@ const PlaceOrderPage = ({ history }) => {
 
     useEffect(() => {
         if(success) {
-            history.pushState(`/order/${order._id}`)
+            history.push(`/order/${order._id}`)
         }
+        // eslint-disable-next-line
     }, [history, success])
 
     const placeOrderHandler = () => {
